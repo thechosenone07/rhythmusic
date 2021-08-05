@@ -111,8 +111,7 @@ async def song(client, message):
                  title=str(rip_data["title"]),
                  performer=str(rip_data["Uploader..."]),
                  thumb=lol,
-                 caption=cap
-                 YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(" Watch On YouTube 💡", url=f"https://www.youtube.com/watch?v=k5KFTSRvQgA&pp=sAQA")]])) 
+                 caption=cap) 
         await rkp.delete()
         os.system("rm -rf *.mp3")
         os.system("rm -rf *.webp")
@@ -198,8 +197,7 @@ async def song(client, message):
                  title=str(rip_data["title"]),
                  performer=str(rip_data["Uploader..."]),
                  thumb=lol,
-                 caption=cap
-                 YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(" Watch On YouTube 💡 ", url=f"https://www.youtube.com/watch?v=k5KFTSRvQgA&pp=sAQA")]]) ))  
+                 caption=cap) 
         await rkp.delete()
         os.system("rm -rf *.mp3")
         os.system("rm -rf *.webp")
