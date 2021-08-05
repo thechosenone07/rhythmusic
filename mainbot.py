@@ -223,7 +223,7 @@ async def start(_, message: Message):
         text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
     )
         return
-       await slbot.send_message(
+       await Jebot.send_message(
                chat_id=message.chat.id,
                text="""<b>👋 Hey There, I'm a Song Downloader Bot. A bot by 👨‍💻 @slbotzone.
 
@@ -288,7 +288,7 @@ async def help(client, message):
             reply_to_message_id=message.message_id
         )
     else:
-        await slbot.send_message(
+        await Jebot.send_message(
                chat_id=message.chat.id,
                text="<b>Song Downloader Help.\n\nSyntax: /song lelena </b>",
             reply_to_message_id=message.message_id
