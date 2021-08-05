@@ -229,22 +229,42 @@ async def start(_, message: Message):
 
                                                            """,   
                             reply_markup=InlineKeyboardMarkup(
-                                [[
-                                        InlineKeyboardButton(
-                                            "  Help ", callback_data="help"),
-                                        InlineKeyboardButton(
-                                            "🔥 guid for create this bot🔥 ", url="https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA?sub_confirmation=1")
-                                    ]]
-                            ),        
+            [
+                [
+                    InlineKeyboardButton(
+                        "Add Me To Your Group ➕", url=f"https://t.me/fastsongdownloderslbzbot?startgroup=true"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        "🛠  Help Menu 🛠", callback_data="help""
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        "⚒ Create your one 📦", url="https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        "🔔  My Update Channel", url=f"https://t.me/sl_bot_zone"
+                    ),
+                    InlineKeyboardButton(
+                        "💬 Support Group ", url="https://t.me/slbotzone"
+                    )
+                ]
+            ]
+        )
+    )      
             disable_web_page_preview=True,        
             parse_mode="html",
             reply_to_message_id=message.message_id
         )
    else:
 
-       await Jebot.send_message(
+       await slbot.send_message(
                chat_id=message.chat.id,
-               text="""<b> 👋Song Downloader Is Online.\n\n</b>""",   
+               text="""<b>✅ Song Downloader Is Online.\n\n</b>""",   
                             reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
@@ -257,10 +277,10 @@ async def start(_, message: Message):
             reply_to_message_id=message.message_id
         )
 
-@Jebot.on_message(filters.command("help"))
+@slbot.on_message(filters.command("help"))
 async def help(client, message):
     if message.chat.type == 'private':   
-        await Jebot.send_message(
+        await slbot.send_message(
                chat_id=message.chat.id,
                text="""<b>Send a song name to download song
 
@@ -268,19 +288,19 @@ async def help(client, message):
             reply_to_message_id=message.message_id
         )
     else:
-        await Jebot.send_message(
+        await slbot.send_message(
                chat_id=message.chat.id,
-               text="<b>Song Downloader Help.\n\nSyntax: `/song guleba`</b>",
+               text="<b>Song Downloader Help.\n\nSyntax: /song lelena </b>",
             reply_to_message_id=message.message_id
         )     
         
 
-@Jebot.on_callback_query()
-async def button(Jebot, update):
+@slbot.on_callback_query()
+async def button(slbot, update):
       cb_data = update.data
       if "help" in cb_data:
         await update.message.delete()
-        await help(Jebot, update.message)
+        await help(slbot, update.message)
 
 print(
     """
@@ -290,4 +310,4 @@ Join @slbotzone
 """
 )
 
-Jebot.run()
+slbot.run()
