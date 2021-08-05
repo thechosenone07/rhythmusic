@@ -1,14 +1,3 @@
-#    Copyright (c) 2021 slbotzone <https://t.me/slbotzone>
- 
-#    This program is free software: you can redistribute it and/or modify  
-#    it under the terms of the GNU General Public License as published by  
-#    the Free Software Foundation, version 3.
-# 
-#    This program is distributed in the hope that it will be useful, but 
-#    WITHOUT ANY WARRANTY; without even the implied warranty of 
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
-#    General Public License for more details.
-
 import os
 import aiohttp
 import asyncio
@@ -30,7 +19,7 @@ from youtube_dl.utils import (
     XAttrMetadataError,
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, InlineQuery, InputTextMessageContent
-
+from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOccupied
 
 Jebot = Client(
    "Song Downloader",
@@ -43,12 +32,12 @@ Jebot = Client(
  #For private messages        
  #Ignore commands
  #No bots also allowed
+
 @Jebot.on_message(filters.private & ~filters.bot & ~filters.command("help") & ~filters.command("start") & ~filters.command("s"))
 async def song(client, message):
- #ImJanindu #JEBotZ
     cap = "@fastsongdownloderslbzbot"
     url = message.text
-    rkp = await message.reply("🌟 Processing...")
+    rkp = await message.reply("<b>🔍 Searching your song ...</b>")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
     test = search.result()
     p = json.loads(test)
@@ -56,7 +45,7 @@ async def song(client, message):
     try:
         url = q[0]["link"]
     except BaseException:
-        return await rkp.edit("🌟Failed to find that song.")
+        return await rkp.edit("<b>Failed to find your song 😥.... Try anyother one !</b>")
     type = "audio"
     if type == "audio":
         opts = {
@@ -80,14 +69,14 @@ async def song(client, message):
         }
         song = True
     try:
-        await rkp.edit("📥 Downloading...")
+        await rkp.edit("<b>Downloading ⏳ Your Song, Please Wait </b>")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
         await rkp.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await rkp.edit("`📥 The download content was too short.`")
+        await rkp.edit("The download content was too short ⏱.")
         return
     except GeoRestrictedError:
         await rkp.edit(
@@ -114,27 +103,28 @@ async def song(client, message):
         return
     time.time()
     if song:
-        await rkp.edit(" 📤 Uploading...") #ImJanindu
+        await rkp.edit("<b>Uploading ⏳ Your Song, Please Wait </b>") 
         lol = "./thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
                  duration=int(rip_data["duration"]),
                  title=str(rip_data["title"]),
-                 performer=str(rip_data["📤uploader"]),
+                 performer=str(rip_data["Uploader..."]),
                  thumb=lol,
-                 caption=cap)  #JEBotZ
+                 caption=cap
+                 YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(" Watch On YouTube 💡", url=f"https://www.youtube.com/watch?v=k5KFTSRvQgA&pp=sAQA")]])) 
         await rkp.delete()
         os.system("rm -rf *.mp3")
         os.system("rm -rf *.webp")
   
     
-@Jebot.on_message(filters.command("song") & ~filters.edited & filters.group)
+@slbot.on_message(filters.command("song") & ~filters.edited & filters.group)
 async def song(client, message):
     cap = "@fastsongdownloderslbzbot"
     url = message.text.split(None, 1)[1]
-    rkp = await message.reply("Processing...")
+    rkp = await message.reply("<b>🔍 Searching your song ...</b>")
     if not url:
-        await rkp.edit("**🤦What's the song you want?**\nUsage`/song <song name>`")
+        await rkp.edit("**<b>What's the song you want?, Please use this format **\nformat /song <song name> </b>")
     search = SearchVideos(url, offset=1, mode="json", max_results=1)
     test = search.result()
     p = json.loads(test)
@@ -142,7 +132,7 @@ async def song(client, message):
     try:
         url = q[0]["link"]
     except BaseException:
-        return await rkp.edit("Failed to find that song.")
+        return await rkp.edit("<b>Failed to find your song 😥.... Try anyother one !</b>")
     type = "audio"
     if type == "audio":
         opts = {
@@ -166,14 +156,14 @@ async def song(client, message):
         }
         song = True
     try:
-        await rkp.edit("Downloading...")
+        await rkp.edit("<b>Downloading ⏳ Your Song, Please Wait </b>")
         with YoutubeDL(opts) as rip:
             rip_data = rip.extract_info(url)
     except DownloadError as DE:
         await rkp.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await rkp.edit("`The download content was too short.`")
+        await rkp.edit("The download content was too short ⏱.")
         return
     except GeoRestrictedError:
         await rkp.edit(
@@ -200,33 +190,48 @@ async def song(client, message):
         return
     time.time()
     if song:
-        await rkp.edit("Uploading...") #ImJanindu
+        await rkp.edit("<b>Uploading ⏳ Your Song, Please Wait </b>") 
         lol = "./thumb.jpg"
         lel = await message.reply_audio(
                  f"{rip_data['id']}.mp3",
                  duration=int(rip_data["duration"]),
                  title=str(rip_data["title"]),
-                 performer=str(rip_data["uploader"]),
+                 performer=str(rip_data["Uploader..."]),
                  thumb=lol,
-                 caption=cap)  #JEBotZ
+                 caption=cap
+                 YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton(" Watch On YouTube 💡 ", url=f"https://www.youtube.com/watch?v=k5KFTSRvQgA&pp=sAQA")]]) ))  
         await rkp.delete()
         os.system("rm -rf *.mp3")
         os.system("rm -rf *.webp")
  
     
-@Jebot.on_message(filters.command("start"))
-async def start(client, message):
-   if message.chat.type == 'private':
-       await Jebot.send_message(
+JOIN_ASAP = "<b>You Need To Join My updates channel  For Executing This Command 👮‍♀️...</b>"
+
+FSUBB = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton(text="🔔 Join My Channel", url=f"https://t.me/sl_bot_zone")
+        ]]
+    )
+@slbot.on_message(command(["start", f"start"]) & other_filters)
+@errors
+async def start(_, message: Message):
+   if message.chat.type == 'private': 
+    try:
+        await message._client.get_chat_member(int("-1001325914694"), message.from_user.id)
+    except UserNotParticipant:
+        await message.reply_text(
+        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
+    )
+        return
+       await slbot.send_message(
                chat_id=message.chat.id,
-               sticker("CAACAgIAAxkBAAEJp3Bg1CErSDjmDGLFaJZt7DW1x2H97QACqAEAAjDUnREPZpQTbub_3h4E")
                text="""<b>👋 Hey There, I'm a Song Downloader Bot. A bot by 👨‍💻 @slbotzone.
 
-Hit help button to find out more about how to use me</b>""",   
+                                                           """,   
                             reply_markup=InlineKeyboardMarkup(
                                 [[
                                         InlineKeyboardButton(
-                                            " 💫 Help 💫", callback_data="help"),
+                                            "  Help ", callback_data="help"),
                                         InlineKeyboardButton(
                                             "🔥 guid for create this bot🔥 ", url="https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA?sub_confirmation=1")
                                     ]]
