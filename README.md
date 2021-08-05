@@ -19,9 +19,9 @@
 
 ### Credits:
 
-###- [slbotzone](https://t.me/slbotzone)
+- [slbotzone](https://t.me/slbotzone)
 
-###- [Pyrogram Library](https://github.com/pyrogram/pyrogram)
+- [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 
 ### Developers:
 
