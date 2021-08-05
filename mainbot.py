@@ -118,7 +118,7 @@ async def song(client, message):
         os.system("rm -rf *.webp")
   
     
-@slbot.on_message(filters.command("song") & ~filters.edited & filters.group)
+@Jebot.on_message(filters.command("song") & ~filters.edited & filters.group)
 async def song(client, message):
     cap = "@fastsongdownloderslbzbot"
     url = message.text.split(None, 1)[1]
@@ -212,7 +212,7 @@ FSUBB = InlineKeyboardMarkup(
         InlineKeyboardButton(text="🔔 Join My Channel", url=f"https://t.me/sl_bot_zone")
         ]]
     )
-@slbot.on_message(command(["start", f"start"]) & other_filters)
+@Jebot.on_message(command(["start", f"start"]) & other_filters)
 @errors
 async def start(_, message: Message):
    if message.chat.type == 'private': 
@@ -262,7 +262,7 @@ async def start(_, message: Message):
         )
    else:
 
-       await slbot.send_message(
+       await Jebot.send_message(
                chat_id=message.chat.id,
                text="""<b>✅ Song Downloader Is Online.\n\n</b>""",   
                             reply_markup=InlineKeyboardMarkup(
@@ -277,10 +277,10 @@ async def start(_, message: Message):
             reply_to_message_id=message.message_id
         )
 
-@slbot.on_message(filters.command("help"))
+@Jebot.on_message(filters.command("help"))
 async def help(client, message):
     if message.chat.type == 'private':   
-        await slbot.send_message(
+        await Jebot.send_message(
                chat_id=message.chat.id,
                text="""<b>Send a song name to download song
 
@@ -295,12 +295,12 @@ async def help(client, message):
         )     
         
 
-@slbot.on_callback_query()
-async def button(slbot, update):
+@Jebot.on_callback_query()
+async def button(Jebot, update):
       cb_data = update.data
       if "help" in cb_data:
         await update.message.delete()
-        await help(slbot, update.message)
+        await help(Jebot, update.message)
 
 print(
     """
@@ -310,4 +310,4 @@ Join @slbotzone
 """
 )
 
-slbot.run()
+Jebot.run()
