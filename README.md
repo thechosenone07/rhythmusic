@@ -17,7 +17,7 @@
 ###  🧙‍♀️ Deploy Guide
 <a href="https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA?sub_confirmation=1"><img src="https://telegra.ph/file/beca543cd87ec72be6069.jpg"></a>
 
-### Credits:
+### CREDITS -:
 
 - [@J A R V I S ](https://t.me/CH05EN_ONE)
 - [@ABHISHEKSG ](https://t.me/Abhisheksg)
