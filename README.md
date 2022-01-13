@@ -20,7 +20,7 @@
 ### Credits:
 
 - [@J A R V I S ](https://t.me/CH05EN_ONE)
-- [@ABHISHEKSG ] (https://t.me/Abhisheksg)
+- [@ABHISHEKSG ](https://t.me/Abhisheksg)
 - 
 - [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 
