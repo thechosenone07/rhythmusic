@@ -14,8 +14,8 @@
 
 
 ###   <a href="https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA?sub_confirmation=1"><img src="https://img.shields.io/badge/How%20To-Deploy-red.svg?logo=Youtube"></a>
-###  🧙‍♀️ Deploy Guide
-<a href="https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA?sub_confirmation=1"><img src="https://telegra.ph/file/beca543cd87ec72be6069.jpg"></a>
+###  🧙‍♀️ TG CHANNEL •
+<a href="https://t.me/TeamRhythm"><img src="https://te.legra.ph/file/3ddd94b8be09c6e0b63ac.jpg"></a>
 
 ### CREDITS -:
 
