@@ -1,11 +1,11 @@
-# Telegram Song Download Bot ❤
+# TELEGRAM MUSIC DOWNLOADER BOT !! 
 
-## You can download any song using this bot. Can be found in telegram as [@fastsongdownloderslbzbot](https://t.me/fastsongdownloderslbzbot)
+## You can download any song using this bot. Can be found in telegram as [@TEAMRHYTHMN](https://t.me/teamrhythmn)
 <img align="right" src="https://github.com/RazorKenway/RazorKenway/raw/main/Developer.gif" style="max-width:100%;">
-<img align="senter" src="https://telegra.ph/file/6a770aa935e5b53dbf20e.jpg" style="max-width:100%;">
+<img align="senter" src="https://te.legra.ph/file/162a491d30ff79591e145.jpg" style="max-width:100%;">
 
 
-### Deploy to Heroku 🔥🕺 
+### Deploy to Heroku 🕺 
 
 [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/youtubeslgeekshow/fastsongdownloaderbot)
 
@@ -19,11 +19,12 @@
 
 ### Credits:
 
-- [slbotzone](https://t.me/slbotzone)
-
+- [@J A R V I S ](https://t.me/CH05EN_ONE)
+- [@ABHISHEKSG ] (https://t.me/Abhisheksg)
+- 
 - [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 
-### Developers:
+### Base dev:
 
 - [@supunma](https://t.me/supunma)
 
