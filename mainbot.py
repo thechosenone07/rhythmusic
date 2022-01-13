@@ -207,7 +207,7 @@ JOIN_ASAP = "<b>You Need To Join My updates channel  For Executing This Command 
 
 FSUBB = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton(text="🔔 Join My Channel", url=f"https://t.me/sl_bot_zone")
+        InlineKeyboardButton(text="JOIN MY CHANNEL 🔅", url=f"https://t.me/teamrhythm")
         ]]
     )
 @Jebot.on_message(command(["start", f"start"]) & other_filters)
@@ -223,14 +223,14 @@ async def start(_, message: Message):
         return
        await Jebot.send_message
                chat_id=message.chat.id,
-               text="""<b>👋 Hey There, I'm a Song Downloader Bot. A bot by 👨‍💻 @slbotzone.
+               text="""<b>Hey'Ya ♥️, I'm a Music Downloader Bot. FROM @TEAMRHYTHM.
 
                                                            """,   
                             reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Add Me To Your Group ➕", url=f"https://t.me/fastsongdownloderslbzbot?startgroup=true"
+                        "Add Me To Your Group ➕", url=f"https://t.me/RHYTHMPROBOT?startgroup=true"
                     )
                 ],
                 [
@@ -240,15 +240,15 @@ async def start(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "⚒ Create your one 📦", url="https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA"
+                        "🔅 OUR CHANNEL 🔅", url="https://t.me/TeamRhythm"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔔  My Update Channel", url=f"https://t.me/sl_bot_zone"
+                        "🔁 RE-START 🔁", url=f"https://t.me/RHYTHMPROBOT"
                     ),
                     InlineKeyboardButton(
-                        "💬 Support Group ", url="https://t.me/slbotzone"
+                        "📝 WiKi ", url="https://telegra.ph/RHYTHM-01-13"
                     )
                 ]
             ]
@@ -304,7 +304,7 @@ print(
     """
 Bot Started!
 
-Join @slbotzone
+Join @TeamRhythm
 """
 )
 
