@@ -1,15 +1,15 @@
 {
     "name": "Song Downloader Bot",
     "description": "A bot that can download song you want.",
-    "logo": "https://telegra.ph/file/b3efcfc264cc17fdec9fe.jpg",
+    "logo": "https://te.legra.ph/file/162a491d30ff79591e145.jpg",
     "keywords": [
         "Music",
         "Songdl",
         "Telegram Bot",
         "slbotzone Bots"
     ],
-    "website": "https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA/videos",
-    "repository": "https://github.com/youtubeslgeekshow/fastsongdownloaderbot",
+    "TG CHANNEL": "https://t.me/TeamRhythm",
+    "repository": "https://github.com/thechosenone07/rhythmusic",
     "success_url": "https://t.me/slbotzone",
     "env": {
         "TG_BOT_TOKEN": {
